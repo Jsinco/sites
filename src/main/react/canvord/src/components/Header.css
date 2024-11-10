@@ -1,0 +1,122 @@
+
+.header {
+  position: relative;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+  overflow: hidden; /* Prevent logos from overflowing the header */
+}
+
+.header-content {
+  position: relative;
+  z-index: 2;
+}
+
+.logos-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none; /* Prevent logos from interfering with clicking */
+  z-index: 1;
+}
+
+.logo {
+  position: absolute;
+  animation: moveLogo 5s infinite ease-in-out;
+}
+
+.logo:hover {
+    animation-play-state: paused;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes moveLogo {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(50px, 50px) rotate(180deg);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+    opacity: 1;
+  }
+}
+
+.logo-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logo {
+  filter: drop-shadow(0 0 2em #646cffaa);
+  /* animation: logo-spin 600ms ease-in-out; */
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(720deg);
+  }
+}
+
+@keyframes logo-slowdown {
+  from {
+    transform: rotate(360deg);
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/*
+
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+ */
+
+@keyframes clickedAnimation {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1);
+  }
+  70% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.clicked {
+  animation: clickedAnimation 0.5s ease-out forwards;
+}
